@@ -12,7 +12,7 @@
 		6E70A1D42C089E9400465CAD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A1D32C089E9400465CAD /* MainViewController.swift */; };
 		6E70A1D92C089E9400465CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E70A1D82C089E9400465CAD /* Assets.xcassets */; };
 		6E70A1EA2C08A54800465CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E70A1E92C08A54800465CAD /* LaunchScreen.storyboard */; };
-		6E70A1EC2C08ABCB00465CAD /* UIKit in Resources */ = {isa = PBXBuildFile; fileRef = 6E70A1EB2C08ABCA00465CAD /* UIKit */; };
+		6E70A1F12C08B73D00465CAD /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E70A1F02C08B73D00465CAD /* UIColor + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		6E70A1D82C089E9400465CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E70A1DD2C089E9400465CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E70A1E92C08A54800465CAD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6E70A1EB2C08ABCA00465CAD /* UIKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIKit; sourceTree = "<group>"; };
+		6E70A1F02C08B73D00465CAD /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		6E70A1E42C089F0900465CAD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6E70A1EB2C08ABCA00465CAD /* UIKit */,
+				6E70A1EF2C08B72100465CAD /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -113,6 +113,14 @@
 				6E70A1D12C089E9400465CAD /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		6E70A1EF2C08B72100465CAD /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				6E70A1F02C08B73D00465CAD /* UIColor + Extensions.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +181,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E70A1EC2C08ABCB00465CAD /* UIKit in Resources */,
 				6E70A1D92C089E9400465CAD /* Assets.xcassets in Resources */,
 				6E70A1EA2C08A54800465CAD /* LaunchScreen.storyboard in Resources */,
 			);
@@ -187,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E70A1D42C089E9400465CAD /* MainViewController.swift in Sources */,
+				6E70A1F12C08B73D00465CAD /* UIColor + Extensions.swift in Sources */,
 				6E70A1D02C089E9400465CAD /* AppDelegate.swift in Sources */,
 				6E70A1D22C089E9400465CAD /* SceneDelegate.swift in Sources */,
 			);
