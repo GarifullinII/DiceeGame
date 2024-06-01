@@ -34,8 +34,10 @@ class MainViewController: UIViewController {
         let button = UIButton(type: .system)
         button.backgroundColor = .white
         button.layer.cornerRadius = 10
+        button.tintColor = .specialBackground
         button.setTitle("ROLL", for: .normal)
         button.titleLabel?.font = button.titleLabel?.font.withSize(32)
+        button.addTarget(self, action: #selector(rollButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -54,8 +56,13 @@ class MainViewController: UIViewController {
         view.addSubview(diceSecondImageView)
         view.addSubview(rollButton)
     }
+    
+    @objc private func rollButtonTapped() {
+        print("rollButtonTapped")
+    }
 }
 
+// MARK: -SetConstraints
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
