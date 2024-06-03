@@ -8,6 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    var leftDiceeNumber = 1
+    var rightDiceeNumber = 5
+    let imageArray = [UIImage(imageLiteralResourceName: "dice1.png"),
+     UIImage(imageLiteralResourceName: "dice2.png"),
+     UIImage(imageLiteralResourceName: "dice3.png"),
+     UIImage(imageLiteralResourceName: "dice4.png"),
+     UIImage(imageLiteralResourceName: "dice5.png"),
+     UIImage(imageLiteralResourceName: "dice6.png")]
     
     private let logoImageView:  UIImageView = {
         let image = UIImage(named: "diceeLogo.png")
@@ -16,14 +24,14 @@ class MainViewController: UIViewController {
         return imageView
     }()
     
-    private let diceFirstImageView:  UIImageView = {
+    private let diceLeftImageView:  UIImageView = {
         let image = UIImage(named: "dice1.png")
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let diceSecondImageView:  UIImageView = {
+    private let diceRightImageView:  UIImageView = {
         let image = UIImage(named: "dice2.png")
         let imageView = UIImageView(image: image)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,13 +60,16 @@ class MainViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .specialBackground
         view.addSubview(logoImageView)
-        view.addSubview(diceFirstImageView)
-        view.addSubview(diceSecondImageView)
+        view.addSubview(diceLeftImageView)
+        view.addSubview(diceRightImageView)
         view.addSubview(rollButton)
     }
     
     @objc private func rollButtonTapped() {
-        print("rollButtonTapped")
+        diceLeftImageView.image = imageArray.randomElement()
+        diceRightImageView.image = imageArray.randomElement()
+        leftDiceeNumber += 1
+        rightDiceeNumber -= 1
     }
 }
 
@@ -73,20 +84,20 @@ extension MainViewController {
             logoImageView.widthAnchor.constraint(equalToConstant: 300)
         ])
         NSLayoutConstraint.activate([
-            diceFirstImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            diceFirstImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            diceFirstImageView.heightAnchor.constraint(equalToConstant: 100),
-            diceFirstImageView.widthAnchor.constraint(equalToConstant: 100)
+            diceLeftImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            diceLeftImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            diceLeftImageView.heightAnchor.constraint(equalToConstant: 100),
+            diceLeftImageView.widthAnchor.constraint(equalToConstant: 100)
         ])
         NSLayoutConstraint.activate([
-            diceSecondImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            diceSecondImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
-            diceSecondImageView.heightAnchor.constraint(equalToConstant: 100),
-            diceSecondImageView.widthAnchor.constraint(equalToConstant: 100)
+            diceRightImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            diceRightImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            diceRightImageView.heightAnchor.constraint(equalToConstant: 100),
+            diceRightImageView.widthAnchor.constraint(equalToConstant: 100)
         ])
         NSLayoutConstraint.activate([
             rollButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            rollButton.topAnchor.constraint(equalTo: diceSecondImageView.bottomAnchor, constant: 100),
+            rollButton.topAnchor.constraint(equalTo: diceRightImageView.bottomAnchor, constant: 100),
             rollButton.heightAnchor.constraint(equalToConstant: 60),
             rollButton.widthAnchor.constraint(equalToConstant: 100)
         ])
