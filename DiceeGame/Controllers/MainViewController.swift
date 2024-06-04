@@ -50,6 +50,8 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    private var imagesStackView = UIStackView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +65,13 @@ class MainViewController: UIViewController {
         view.addSubview(diceLeftImageView)
         view.addSubview(diceRightImageView)
         view.addSubview(rollButton)
+        
+        imagesStackView = UIStackView(arrangedSubviews: [
+            diceLeftImageView,
+            diceRightImageView
+        ], axis: .horizontal, spacing: 50)
+        
+        view.addSubview(imagesStackView)
     }
     
     @objc private func rollButtonTapped() {
@@ -83,16 +92,8 @@ extension MainViewController {
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
         ])
         NSLayoutConstraint.activate([
-            diceLeftImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            diceLeftImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            diceLeftImageView.heightAnchor.constraint(equalToConstant: 100),
-            diceLeftImageView.widthAnchor.constraint(equalToConstant: 100)
-        ])
-        NSLayoutConstraint.activate([
-            diceRightImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            diceRightImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
-            diceRightImageView.heightAnchor.constraint(equalToConstant: 100),
-            diceRightImageView.widthAnchor.constraint(equalToConstant: 100)
+            imagesStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            imagesStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         NSLayoutConstraint.activate([
             rollButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
