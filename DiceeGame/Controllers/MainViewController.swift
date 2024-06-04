@@ -77,11 +77,10 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            logoImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
-            logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            logoImageView.heightAnchor.constraint(equalToConstant: 200),
-            logoImageView.widthAnchor.constraint(equalToConstant: 300)
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            logoImageView.heightAnchor.constraint(equalToConstant: 100),
+            logoImageView.widthAnchor.constraint(equalToConstant: 200)
         ])
         NSLayoutConstraint.activate([
             diceLeftImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -97,7 +96,7 @@ extension MainViewController {
         ])
         NSLayoutConstraint.activate([
             rollButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            rollButton.topAnchor.constraint(equalTo: diceRightImageView.bottomAnchor, constant: 100),
+            rollButton.topAnchor.constraint(equalTo: diceRightImageView.bottomAnchor, constant: 50),
             rollButton.heightAnchor.constraint(equalToConstant: 60),
             rollButton.widthAnchor.constraint(equalToConstant: 100)
         ])
